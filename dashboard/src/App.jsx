@@ -16,7 +16,7 @@ function App() {
   React.useEffect(() => {
     const interval = setInterval(() => {
       axios
-        .post("http://34.134.121.143:5000/api/post", formdata)
+        .post("http://34.135.119.144:5000/api/post", formdata)
         .then((res) => {
           console.log(res);
           console.log(res.data);

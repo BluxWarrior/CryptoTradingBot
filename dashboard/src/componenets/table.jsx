@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTable, useSortBy, useFilters, usePagination } from 'react-table';
 
 function DefaultColumnFilter({
@@ -39,7 +39,7 @@ function MyTable({ columns, data }) {
         []
     )
 
-
+    const [ kulkul, setKulkul ] = useState(0);
 
     const {
         getTableProps,
@@ -62,14 +62,16 @@ function MyTable({ columns, data }) {
             data,
             defaultColumn,
             filterTypes,
-            initialState: { pageIndex: 0 },
+            initialState: { pageIndex: kulkul },
         },
         useFilters,
         useSortBy,
         usePagination
     )
 
-
+    useEffect(() => {
+        setKulkul(pageIndex)
+    }, [pageIndex])
 
     return (
         <div>
