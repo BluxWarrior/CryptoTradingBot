@@ -73,6 +73,10 @@ function App() {
 
   return (
     <div>
+      <div>
+        <p>USD: {balance["USD"]}</p>
+        <p>BTC: {balance["BTC"]}</p>
+      </div>
       <Chart historicaldata={historicaldata} />
       <MyTable columns={columns} data={orderingdata} />
     </div>

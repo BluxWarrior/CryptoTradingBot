@@ -39,7 +39,7 @@ function MyTable({ columns, data }) {
         []
     )
 
-    const [ kulkul, setKulkul ] = useState(0);
+    const [ recoverpageIndex, setrecoverpageIndex ] = useState(0);
 
     const {
         getTableProps,
@@ -62,7 +62,7 @@ function MyTable({ columns, data }) {
             data,
             defaultColumn,
             filterTypes,
-            initialState: { pageIndex: kulkul },
+            initialState: { pageIndex: recoverpageIndex },
         },
         useFilters,
         useSortBy,
@@ -70,24 +70,28 @@ function MyTable({ columns, data }) {
     )
 
     useEffect(() => {
-        setKulkul(pageIndex)
+        setrecoverpageIndex(pageIndex)
+    }, [pageIndex])
+
+    useEffect(() => {
+        setrecoverpageIndex(pageIndex)
     }, [pageIndex])
 
     return (
         <div>
-            <table {...getTableProps()} style={{ border: 'solid 1px blue', marginLeft : "auto", marginRight : "auto" }}>
+            <table {...getTableProps()} style={{ border: 'solid 1px blue', marginLeft : "auto", marginRight : "auto", width: "80%" }}>
                 <thead>
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map(column => (
-                                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                <th>
                                     {column.render('Header')}
-                                    {column.isSorted
+                                    {/* {column.isSorted
                                         ? column.isSortedDesc
                                             ? ' 🔽'
                                             : ' 🔼'
                                         : ''}
-                                    <div>{column.canFilter ? column.render('Filter') : null}</div>
+                                    <div>{column.canFilter ? column.render('Filter') : null}</div> */}
                                 </th>
                             ))}
                         </tr>
