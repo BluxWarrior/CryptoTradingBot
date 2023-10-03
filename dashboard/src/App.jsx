@@ -11,8 +11,11 @@ function App() {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
+      const data = {
+        "granularity": 300,
+      }
       axios
-        .get("http://localhost:5000/api/fetchdata")
+        .post("http://localhost:5000/api/fetchdata", data)
         .then((res) => {
           console.log(res);
           console.log(res.data);
@@ -21,7 +24,7 @@ function App() {
         .catch((error) => {
           console.error("There was an error!", error);
         });
-    }, 5000);
+    }, 60000);
     return () => clearInterval(interval);
   }, []);
 
@@ -81,7 +84,7 @@ function App() {
 
   return (
     <div>
-      {/* <Chart historicaldata={historicaldata} /> */}
+      <Chart historicaldata={historicaldata} />
       <MyTable columns={columns} data={data} />
     </div>
     // <>
