@@ -34,4 +34,4 @@ def data_post():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(port=5000)
+    app.run(port=5000, host='0.0.0.0')

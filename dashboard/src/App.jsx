@@ -7,15 +7,23 @@ import MyTable from './componenets/table'
 function App() {
   const [historicaldata, setHistoricalData] = useState([]);
 
-  
+  const formdata = {
+    "granularity": 300,
+  }
+
+  // axios
+  //   .post("http://34.134.121.143:5000/api/fetchdata", formdata)
+  //   .then((res) => {
+  //     console.log(res);
+  //     console.log(res.data);
+  //     historicaldata = res.data;
+  //   })
+
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      const data = {
-        "granularity": 300,
-      }
       axios
-        .post("http://localhost:5000/api/fetchdata", data)
+        .post("http://34.134.121.143:5000/api/fetchdata", formdata)
         .then((res) => {
           console.log(res);
           console.log(res.data);
@@ -24,7 +32,7 @@ function App() {
         .catch((error) => {
           console.error("There was an error!", error);
         });
-    }, 60000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
