@@ -73,7 +73,7 @@ function MyTable({ columns, data }) {
 
     return (
         <div>
-            <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
+            <table {...getTableProps()} style={{ border: 'solid 1px blue', marginLeft : "auto", marginRight : "auto" }}>
                 <thead>
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
@@ -104,7 +104,7 @@ function MyTable({ columns, data }) {
                     })}
                 </tbody>
             </table>
-            <div className="pagination">
+            <div className="pagination" style={{marginLeft : "auto", marginRight : "auto"}}>
                 <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
                     {'<<'}
                 </button>{' '}

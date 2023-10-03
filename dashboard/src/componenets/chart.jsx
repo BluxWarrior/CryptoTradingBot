@@ -19,11 +19,9 @@ const Chart = ({historicaldata}) => {
       width={600}
       height={400}
       data={historicaldata}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
+      style={{
+        marginLeft : "auto",
+        marginRight : "auto",
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
