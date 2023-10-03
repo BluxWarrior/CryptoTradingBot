@@ -6,28 +6,23 @@ import MyTable from './componenets/table'
 
 function App() {
   const [historicaldata, setHistoricalData] = useState([]);
+  const [balance, setBalancelData] = useState([]);
+  const [orderingdata, setOrderingData] = useState([]);
 
   const formdata = {
     "granularity": 300,
   }
 
-  // axios
-  //   .post("http://34.134.121.143:5000/api/fetchdata", formdata)
-  //   .then((res) => {
-  //     console.log(res);
-  //     console.log(res.data);
-  //     historicaldata = res.data;
-  //   })
-
-
   React.useEffect(() => {
     const interval = setInterval(() => {
       axios
-        .post("http://34.134.121.143:5000/api/fetchdata", formdata)
+        .post("http://34.134.121.143:5000/api/post", formdata)
         .then((res) => {
           console.log(res);
           console.log(res.data);
-          setHistoricalData(res.data);
+          setHistoricalData(res.data.historical_data);
+          setBalancelData(res.data.balance);
+          res.data.ordering_history&&setOrderingData(res.data.ordering_history);
         })
         .catch((error) => {
           console.error("There was an error!", error);
@@ -36,35 +31,21 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // const historicaldata = React.useMemo(
-  //   () => [
-  //     { time: 'A', price: 400, MA50: 240, MA200: 100 },
-  //     { time: 'B', price: 600, MA50: 480, MA200: 480 },
-  //     { time: 'C', price: 800, MA50: 360, MA200: 240 },
-  //     { time: 'D', price: 1000, MA50: 800, MA200: 990 },
-  //     { time: 'E', price: 1200, MA50: 540, MA200: 760 },
-  //     { time: 'F', price: 1400, MA50: 960, MA200: 640 },
-  //     { time: 'G', price: 1600, MA50: 780, MA200: 840 },
-  //     { time: 'H', price: 1800, MA50: 620, MA200: 680 },
-  //   ],
-  //   []
-  // )
-
   const data = React.useMemo(
     () => [
       {
         time: 'Hello',
-        ordertype: 'World',
+        action: 'World',
         price: '$1000',
       },
       {
         time: 'React',
-        ordertype: 'Table',
+        action: 'Table',
         price: '$2000',
       },
       {
         time: 'This',
-        ordertype: 'Is a row',
+        action: 'Is a row',
         price: '$3000',
       },
     ],
@@ -78,8 +59,8 @@ function App() {
         accessor: 'time', // accessor is the "key" in the data
       },
       {
-        Header: 'Order Type',
-        accessor: 'ordertype',
+        Header: 'Action',
+        accessor: 'action',
       },
       {
         Header: 'Price',
@@ -93,7 +74,7 @@ function App() {
   return (
     <div>
       <Chart historicaldata={historicaldata} />
-      <MyTable columns={columns} data={data} />
+      <MyTable columns={columns} data={orderingdata} />
     </div>
     // <>
     //   <div>
