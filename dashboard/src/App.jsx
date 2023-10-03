@@ -1,14 +1,69 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
 import './App.css'
 import Chart from './componenets/chart'
+import MyTable from './componenets/table'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const historicaldata = React.useMemo(
+    () => [
+      { time: 'A', price: 400, MA50: 240, MA200: 100 },
+      { time: 'B', price: 600, MA50: 480, MA200: 480 },
+      { time: 'C', price: 800, MA50: 360, MA200: 240 },
+      { time: 'D', price: 1000, MA50: 800, MA200: 990 },
+      { time: 'E', price: 1200, MA50: 540, MA200: 760 },
+      { time: 'F', price: 1400, MA50: 960, MA200: 640 },
+      { time: 'G', price: 1600, MA50: 780, MA200: 840 },
+      { time: 'H', price: 1800, MA50: 620, MA200: 680 },
+    ],
+    []
+  )
+
+  const data = React.useMemo(
+    () => [
+      {
+        time: 'Hello',
+        ordertype: 'World',
+        price: '$1000',
+      },
+      {
+        time: 'React',
+        ordertype: 'Table',
+        price: '$2000',
+      },
+      {
+        time: 'This',
+        ordertype: 'Is a row',
+        price: '$3000',
+      },
+    ],
+    []
+  )
+
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: 'UTC time',
+        accessor: 'time', // accessor is the "key" in the data
+      },
+      {
+        Header: 'Order Type',
+        accessor: 'ordertype',
+      },
+      {
+        Header: 'Price',
+        accessor: 'price',
+      },
+    ],
+    []
+  );
+
 
   return (
-    <Chart />
+    <div>
+      <Chart historicaldata={historicaldata} />
+      <MyTable columns={columns} data={data} />
+    </div>
     // <>
     //   <div>
     //     <a href="https://vitejs.dev" target="_blank">
