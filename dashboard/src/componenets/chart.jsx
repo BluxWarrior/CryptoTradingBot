@@ -16,8 +16,8 @@ const data = [
 const Chart = ({historicaldata}) => {
   return (
     <LineChart
-      width={600}
-      height={400}
+      width={1000}
+      height={500}
       data={historicaldata}
       style={{
         marginLeft : "auto",
