@@ -111,7 +111,7 @@ def place_order(action):
         if action == 'buy':
             # accounts = auth_client.get_accounts()
             # fetch your USD account
-            usd_amount = int(get_balance('USD')*0.95)
+            usd_amount = int(get_balance()['USD']*0.95)
             # print(usd_amount-10)
             # break
             btc_price = auth_client.get_buy_price(currency_pair='BTC-USD')
@@ -122,7 +122,7 @@ def place_order(action):
             
             return usd_amount
         elif action == 'sell':
-            amount = get_balance('BTC')
+            amount = get_balance()['BTC']
             primary_account.sell(amount=str(amount), currency='BTC', payment_method=payment_ID)
             return amount
         return False
