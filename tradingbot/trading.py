@@ -34,7 +34,7 @@ short_period = 50
 long_period = 200
 product_id = 'BTC-USD'
 last_ordered_time = None
-iscross = False
+iscross = True
 
 def get_balance():
     accounts_page = advanced_client.list_accounts()
