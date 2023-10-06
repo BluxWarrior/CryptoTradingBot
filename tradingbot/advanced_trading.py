@@ -19,12 +19,12 @@ public_client = cbpro.PublicClient()
 advanced_client = CoinbaseAdvancedTradeAPIClient(api_key=api_key, secret_key=secret_key)
 
 # initialize
-granularity = 300
+granularity = 86400
 short_period = 50
 long_period = 200
 product_id = 'BTC-USD'
-last_ordered_time = None
-iscross = False
+last_fetch_time = None
+last_order_type = 'buy'
 
 
 def get_balance():
@@ -38,10 +38,12 @@ def get_current_price():
     ticker = public_client.get_product_ticker(product_id='BTC-USD')
 
     # Print the latest price
-    print(ticker['price'])
+    return ticker['price']
 
 def fetch_data(granularity):
     data = public_client.get_product_historic_rates(product_id, granularity=granularity)
+
+
     df = pd.DataFrame(data, columns=['time', 'low', 'high', 'open', 'close', 'volume'])
     df['time'] = pd.to_datetime(df['time'], unit='s')
     df['time'] = df['time'].dt.strftime('%Y-%m-%d %H:%M:%S') # Convert datetime to string
@@ -56,42 +58,30 @@ def fetch_data(granularity):
     df['MA200'] = df['close'].rolling(window=long_period).mean()
 
     df.reset_index(level=0, inplace=True)
+
     return df
 
 def check_conditions(df):
     latest_row = df.iloc[-1]
-    price = get_current_price
-    is_above_MA50 = latest_row['close'] > latest_row['MA50']
-    is_above_MA200 = latest_row['close'] > latest_row['MA200']
+    price = float(get_current_price())
+    print(price)
+    is_above_MA50 = price > latest_row['MA50']
+    is_above_MA200 = price > latest_row['MA200']
 
-
-    if latest_row['MA50'] > latest_row['MA200']:
-        if is_above_MA50:
-            global iscross
-            if iscross == False:
-                iscross = True
-                return 'buy'
-            else:
-                return None
-        elif not is_above_MA50:
-            if iscross == True:
-                iscross = False
-                return 'sell'
-            else:
-                return None
-    elif latest_row['MA50'] < latest_row['MA200']:
-        if is_above_MA200:
-            if iscross == False:
-                iscross = True
-                return 'buy'
-            else:
-                return None
-        elif not is_above_MA200:
-            if iscross == True:
-                iscross = False
-                return 'sell'
-            else:
-                return None
+    if price > latest_row['MA50'] and price > latest_row['MA200']:
+        global last_order_type
+        if last_order_type == 'sell':
+            last_order_type = 'buy'
+            return 'buy'
+        else:
+            return None
+    else:
+        if last_order_type == 'buy':
+            last_order_type = 'sell'
+            return 'sell'
+        else:
+            return None
+    
     return None
 
 def generate_client_order_id():
@@ -135,17 +125,22 @@ def ordering(df):
 
 def trading(granularity):
     df = fetch_data(granularity)
+    # print(df.tail())
     currenttime = df.iloc[-1]['time']
-    global last_ordered_time
-    if last_ordered_time != currenttime:
-        print(currenttime)
-        last_ordered_time = currenttime
-        ordering(df)
-
+    global last_fetch_time
+    if last_order_type == 'sell':
+        if last_fetch_time != currenttime:
+            print(currenttime)
+            ordering(df)
+    elif last_order_type == 'buy':
+        if last_fetch_time != currenttime:
+            print(currenttime)
+            ordering(df)
+    last_fetch_time = currenttime
 
 while True:
     trading(granularity)
-    time.sleep(10)
+    time.sleep(3600)
 
 # print(place_order('sell'))
 # product_candles = advanced_client.get_product_candles(product_id="BTC-USD", granularity=300)
