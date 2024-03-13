@@ -41,5 +41,4 @@ Yǔ wěidà zǔguó de shānchuān gòngmíng
 Suìyuè rú jīn wǒmen zhèng niánqīng
 岁月如金 我们正年轻
 wǒmen zhèng niánqīng
-我们正年轻 
-﻿```
+我们正年轻
