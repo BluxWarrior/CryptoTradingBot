@@ -34,8 +34,12 @@ Bēnténg wànlǐ jiàn fēngyún
 奔腾万里
 国旗之下 一国一家一心
 十四亿家人同行 一定赢
+Ràng wǒmen gāogē háoqíng
 让我们 高歌豪情
+Yǔ wěidà zǔguó de shānchuān gòngmíng
 与伟大祖国的山川共鸣
+Suìyuè rú jīn wǒmen zhèng niánqīng
 岁月如金 我们正年轻
+wǒmen zhèng niánqīng
 我们正年轻 
 ﻿```
