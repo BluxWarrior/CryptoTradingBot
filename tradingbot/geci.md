@@ -1,7 +1,7 @@
 ```
 Běishàng mòhé zǎo jiàn yī fān bīngxuě
 北上漠河 早见一番冰雪
- nánxià sān shā hǎi'ōu zhuīzhú lànghuā fēi xiè
+nánxià sān shā hǎi'ōu zhuīzhú lànghuā fēi xiè
 南下三沙 海鸥追逐 浪花飞泻
 dōng dǐ fǔ yuǎn yáowàng rì chū dōnghǎi 
 东抵抚远 遥望日出东海
