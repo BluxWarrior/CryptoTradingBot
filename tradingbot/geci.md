@@ -84,3 +84,29 @@ wei bu bian ci qing you you
 
 wei bu bian ci qing you you
 wei bu bian ci qing you you
+
+
+西风夜渡寒山雨
+The west wind blows past, cold rain in the mountains.
+家国依稀残梦里
+Home and country remembered vaguely in dreams.
+思君不见倍思君
+Thinking of you, yet to not see you, brings further sorrows.
+别离难忍忍别离
+Hard to bare separation, but we must.
+狼烟烽火何时休
+When will the flames of war rest?
+成王败寇尽东流
+Everything washes away in the river of time.
+蜡炬已残泪难干
+The candles are spent, but tears will not dry.
+江山未老红颜旧
+The land is as always but she is not
+忍别离, 不忍却又别离
+Hard to bare separation but we must separate.
+托鸿雁南去, 不知此心何寄
+Entrusting the wild geese to head south, but where shall this heart go?
+红颜旧, 任凭斗转星移
+She is no longer while the firmament rotates as always.
+唯不变此情悠悠
+Only this love is unchanged.
