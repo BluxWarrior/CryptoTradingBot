@@ -61,28 +61,6 @@ bu ren que you bie li
 tuo hong yan nan qu bu zhi ci xin he ji
 hong yan jiu ren ping dou zhuan xing yi
 wei bu bian ci qing you you
-
-
-lang yan feng huo he shi xiu
-cheng wang bai kou jin dong liu
-la ju yi can, lei nan gan
-jiang shan wei lao hong,, yan jiu
-
-
-ren bie li
-bu ren que you bie li
-tuo hong yan nan qu bu zhi ci xin he ji
-hong yan jiu ren ping dou zhuan xing yi
-wei bu bian ci qing you you
-
-ren bie li
-bu ren que you bie li
-tuo hong yan nan qu bu zhi ci xin he ji
-hong yan jiu ren ping dou zhuan xing yi
-wei bu bian ci qing you you
-
-
-wei bu bian ci qing you you
 wei bu bian ci qing you you
 
 
