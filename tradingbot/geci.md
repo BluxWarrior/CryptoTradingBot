@@ -42,6 +42,7 @@ Suìyuè rú jīn wǒmen zhèng niánqīng
 岁月如金 我们正年轻
 wǒmen zhèng niánqīng
 我们正年轻
+```
 
 ```
 xi feng ye du han shan yu
