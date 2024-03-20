@@ -42,3 +42,44 @@ Suìyuè rú jīn wǒmen zhèng niánqīng
 岁月如金 我们正年轻
 wǒmen zhèng niánqīng
 我们正年轻
+
+```
+xi feng ye du han shan yu
+jia guo yi xi can meng li
+si jun bu jian, bei si jun
+bie li nan ren ren..bie li
+
+lang yan feng huo he shi xiu
+cheng wang bai kou jin dong liu
+la ju yi can, lei nan gan
+jiang shan wei lao hong,, yan jiu
+
+
+ren bie li
+bu ren que you bie li
+tuo hong yan nan qu bu zhi ci xin he ji
+hong yan jiu ren ping dou zhuan xing yi
+wei bu bian ci qing you you
+
+
+lang yan feng huo he shi xiu
+cheng wang bai kou jin dong liu
+la ju yi can, lei nan gan
+jiang shan wei lao hong,, yan jiu
+
+
+ren bie li
+bu ren que you bie li
+tuo hong yan nan qu bu zhi ci xin he ji
+hong yan jiu ren ping dou zhuan xing yi
+wei bu bian ci qing you you
+
+ren bie li
+bu ren que you bie li
+tuo hong yan nan qu bu zhi ci xin he ji
+hong yan jiu ren ping dou zhuan xing yi
+wei bu bian ci qing you you
+
+
+wei bu bian ci qing you you
+wei bu bian ci qing you you
