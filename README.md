@@ -1,1 +1,1 @@
-# CryptoTradingBot
+# Crypto-TradingBot
