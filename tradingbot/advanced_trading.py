@@ -12,7 +12,7 @@ api_key = os.getenv('API_KEY')
 secret_key = os.getenv('API_SECRET')
 
 
-# Public Client
+# Public client
 public_client = cbpro.PublicClient()
 
 # advanced Client
