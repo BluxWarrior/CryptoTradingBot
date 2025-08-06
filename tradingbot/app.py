@@ -10,7 +10,7 @@ def hello_world():
     print(3)
     return 'Hello, World!'
 
-# Fetch Data
+### Fetch Data
 @app.route('/api/post', methods=['Post'])
 def data_post():
     # Here key is the URL parameter you want to fetch
